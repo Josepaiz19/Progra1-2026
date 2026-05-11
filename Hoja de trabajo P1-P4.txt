@@ -1,0 +1,120 @@
+//Parte 1
+#include <iostream>
+using namespace std;
+int main()
+{
+    float nota[5];
+    float suma = 0;
+    float promedio;
+    float mayor, menor;
+  
+
+    for (int i = 0; i < 5; i++) {
+        cout << "Ingrese nota " << i + 1<<":";
+        cin >> nota[i];
+        suma += nota[i];
+
+        if (i == 0) {
+            mayor = nota[i];
+            menor = nota[i];
+        }
+        else{
+            if (nota[i] > mayor) {
+                mayor = nota[i];
+            }
+            if (nota[i] < menor) {
+                menor = nota[i];
+            }
+        }
+    }
+    promedio = suma / 5;
+    for (int i = 0; i < 5; i++) {
+        cout << "Nota " << i + 1 <<"=" << nota[i] << endl;
+    }
+    cout << "El promedio es de: " << promedio << endl;
+    cout << "La nota mayor es de: " << mayor << endl;
+    cout << "La nota menor es de: " << menor << endl;
+}
+
+
+//Parte 2
+#include <iostream>
+using namespace std;
+int main()
+{
+    int num[10];
+    int num2=0, num3=0;
+    
+    cout << "Ingrese 10 numeros"<<endl<<endl;
+    for (int i = 0; i < 10;i++) {
+        cout << "Ingrese No." << i + 1 << ": ";
+        cin >> num[i];
+            if (num[i] %2==0) {
+                num2++;
+
+            }
+            else {
+                num3++;
+            }
+    
+    }
+    cout << "Los numeros pares son: " << num2<<endl;
+    cout << "Los numeros impares son: " << num3<<endl;
+}
+
+
+//Parte 3
+#include <iostream>
+using namespace std;
+int main()
+{
+    int num[20];
+    int num2;
+    bool num3 = false;
+
+    cout << "Ingrese 20 numeros" << endl << endl;
+    for (int i = 0; i < 20;i++) {
+        cout << "Ingrese No." << i + 1 << ": ";
+        cin >> num[i];
+    }
+    cout << "Ingrese un numero para comparar: ";
+    cin >> num2;
+    for (int i = 0; i < 20;i++) {
+        if (num[i]==num2) {
+            num3 = true;
+       
+        }
+    }
+    if (num3 == true) {
+        cout << "Numero encontrado";
+   }
+    else {
+        cout << "No encontraste el numero";
+    }
+}
+
+
+//Parte 4 
+#include <iostream>
+using namespace std;
+int main()
+{
+    string nombres[10];
+
+
+    cout << "Ingrese 10 nombres" << endl << endl;
+    for (int i = 0; i < 10;i++) {
+        cout << "Ingrese nombre No." << i + 1 << ": ";
+        cin >> nombres[i];
+    }
+    cout << endl;
+    for (int i = 0; i < 10; i++) {
+        cout << "Los nombres que ingresaste son: " << nombres[i] << endl;
+    }
+    cout << endl;
+    for (int i = 10 - 1;i >= 0; i--) {
+        cout << "Los nombres al reves son:" << nombres[i]<<endl;
+    }
+
+}
+

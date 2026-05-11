@@ -1,0 +1,93 @@
+//Parte 5
+
+#include <iostream>
+using namespace std;
+int main() {
+    int matriz[3][3];
+    int sumaf, sumac;
+
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout<<"Ingrese un numero para fila: "<<i+1<<" Columna: "<<j+1<<" "<<endl;
+            cin >> matriz[i][j];
+        }
+    }
+    cout<<endl;
+       for (int i = 0; i < 3; i++) {
+        int sumaf=0;
+
+        for (int j = 0; j < 3; j++) {
+            cout << matriz[i][j] << " ";
+            sumaf += matriz[i][j];
+        }
+
+        cout<<" Suma= "<< sumaf << endl;
+    }
+
+    
+    cout <<"Suma de las columnas" << endl;
+
+    for (int j = 0; j < 3; j++) {
+        sumac = 0;
+
+        for (int i = 0; i < 3; i++) {
+            sumac+= matriz[i][j];}
+            
+        cout << sumac << " ";
+    }
+
+    cout << endl;
+}
+
+
+//Parte 6 busca minas
+#include<iostream>
+using namespace std;
+int main(){
+    
+    int matriz[4][4]={0};
+    bool uno=false;
+    int fila, columna;
+    matriz[2][2]=1;
+    
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            cout << matriz[i][j] << " ";
+        }
+        cout << endl;
+    }
+    for (int i= 0; i<5; i++) {
+
+        cout <<"Intento"<< i+1 << endl;
+
+        cout <<"Seleccione fila 1-4: ";
+        cin >> fila;
+
+        cout << "Seleccione columna 1-4: ";
+        cin >> columna;
+    
+
+        fila--;
+        columna--;
+
+        if (matriz[fila][columna] == 1) {
+            cout <<"Mina encontrada"<< endl;
+            uno = true;
+            break;
+        
+        } 
+        else 
+        {
+            cout << "No hay mina" << endl<<endl;
+        }
+        
+    }
+    cout<<endl;
+    if (!uno) {
+        cout <<"Ganaste no encontraste la mina" << endl;
+    }
+    
+
+    
+}
+
